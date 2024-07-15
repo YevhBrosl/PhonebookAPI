@@ -20,7 +20,7 @@ public class AddContactOkhttpTests {
     @Test
     public void addContactOkhttpTest() throws IOException {
 
-        ContactDto requestDto = ContactDto.builder()
+        ContactDto contactDto = ContactDto.builder()
                 .name("John")
                 .lastName("Doe")
                 .email("john.doe@gm.com")
@@ -29,7 +29,7 @@ public class AddContactOkhttpTests {
                 .description("friend")
                 .build();
 
-        RequestBody requestBody = RequestBody.create(gson.toJson(requestDto), JSON);
+        RequestBody requestBody = RequestBody.create(gson.toJson(contactDto), JSON);
 
         Request request = new Request.Builder()
                 .url("https://contactapp-telran-backend.herokuapp.com/v1/contacts")
